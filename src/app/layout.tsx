@@ -1,4 +1,5 @@
 import { HydrationBoundary, dehydrate, QueryClient } from "@tanstack/react-query";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 
@@ -47,6 +48,7 @@ export default async function RootLayout({
           <HydrationBoundary state={dehydratedState}>
             <NavigationBar />
             <main>{children}</main>
+            <SpeedInsights />
           </HydrationBoundary>
         </QueryProvider>
         <Toast />
